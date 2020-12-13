@@ -4,7 +4,9 @@ from .models import Article
 
 def make_published(modeladmin, request, queryset):
     queryset.update(status="p")
-    make_published.short_description = "Mark selected as published"
+
+
+make_published.short_description = "Publish selected articles"
 
 
 class ArticleAdmin(admin.ModelAdmin):
