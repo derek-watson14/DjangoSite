@@ -14,6 +14,7 @@ class Article(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
         max_length=1, choices=STATUS_CHOICES, default='d')
+    thumbnail = models.ImageField(default='default.png', blank=True)
     # add thumbnail later
     # add author later
 

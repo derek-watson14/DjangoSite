@@ -25,3 +25,16 @@ a, a:hover, a:visited{
   margin-bottom: 20px;
   padding: 5px;
 }
+
+.article-body {
+  height: 1000px;
+}
+
+.article-img-parallax {
+  width: 100%;
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
