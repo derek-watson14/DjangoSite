@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <h1>Articles List</h1>
-        <div class="articles">
-            {% for article in articles %}
-                {% if article.status == "p" %}
-                    <div class="article">
-                        <h2><a href="#">{{ article.title }}</a></h2>
-                        <p>{{ article.snippit }}</p>
-                        <p>{{ article.date }}</p>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </body>
-</html>
+{% extends 'base_layout.html'%}
+
+{% block content %}
+    <h1>Articles List</h1>
+    <div class="articles">
+        {% for article in articles %}
+            {% if article.status == "p" %}
+                <div class="article">
+                    <h2><a href="{% url 'articles:detail' article.slug %}">{{ article.title }}</a></h2>
+                    <p>{{ article.snippit }}</p>
+                    <p>{{ article.date }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
 

@@ -11,7 +11,7 @@ make_published.short_description = "Publish selected articles"
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'date', 'status')
-    search_fields = ['title', 'published']
+    search_fields = ['title', 'body']
     ordering = ['date']
     actions = [make_published]
 
