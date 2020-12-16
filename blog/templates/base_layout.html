@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Djangonauts</title>
+        <title>Django Blog!</title>
         <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
     <body>
@@ -18,9 +18,8 @@
                     {% if user.is_authenticated == False %}
                     <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
                     <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                    {% endif %}
-                    {% if user.is_authenticated == True %}
-                    <li><a href="{% url 'articles:create' %}">New Article</a></li>
+                    {% else %}
+                    <li><a class="highlight" href="{% url 'articles:create' %}">New Article</a></li>
                     <li>
                         <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                             {% csrf_token %}

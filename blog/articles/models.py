@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 STATUS_CHOICES = [
     ('d', 'Draft'),
@@ -15,8 +16,7 @@ class Article(models.Model):
     status = models.CharField(
         max_length=1, choices=STATUS_CHOICES, default='d')
     thumbnail = models.ImageField(default='default.png', blank=True)
-    # add thumbnail later
-    # add author later
+    author = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

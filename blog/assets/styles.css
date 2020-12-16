@@ -5,7 +5,7 @@ body{
   color: #fff;
 }
 
-body {
+body *{
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -19,15 +19,71 @@ a, a:hover, a:visited{
   text-decoration: none;
 }
 
-.logo {
-  font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: 0.4em;
-  margin-bottom: 20px;
-  padding: 5px;
+.wrapper{
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.article-body {
-  height: 1000px;
+div.wrapper > h1{
+  text-align: center;
+  margin: 100px auto;
+  font-size: 2.4em
+}
+
+header{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px 0;
+}
+
+nav{
+  justify-self: end;
+}
+
+nav li{
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+nav button{
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  font-size: 16px;
+}
+
+.articles{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.article{
+  padding: 20px;
+  position: relative;
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+  border: 1px solid #00dba0;
+}
+
+.article h2{
+  font-size: 1.2em;
+}
+
+.article .author{
+  padding: 10px;
+  background: #00dba0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  color: #0f121f;
+}
+
+.article-detail .article{
+  padding: 0;
 }
 
 .article-img-parallax {
@@ -39,19 +95,68 @@ a, a:hover, a:visited{
   background-size: cover;
 }
 
-.nav-list {
+.article-body {
+  height: 500px;
+}
+
+.article-detail  .article h2{
+  text-align: center;
+  margin: 20px auto;
+  font-size: 2em
+}
+
+.article-detail .article h3{
+  text-align: center;
+}
+
+.article-detail  .article p{
+  margin: 10px 20px
+}
+
+.site-form {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border: 1px solid #00dba0;
+  padding: 20px;
+}
+
+.site-form input, .site-form textarea{
+  display: block;
+  margin: 15px 0 20px 0;
+  padding: 10px;
+}
+
+a.highlight{
+  border: 1px solid #00dba0;
+  padding: 10px;
+  border-radius: 4px;
+  color: #00dba0;
+}
+
+.helptext, .helptext ul{
+  margin: 0 auto 20px;
+  color: #bbb;
+  font-size: 14px;
+  display: block;
+}
+
+.errorlist li{
+  padding: 10px;
   list-style-type: none;
-  padding: 5px;
-  display: flex;
-  flex-direction: row;
-  max-width: 400px;
-  justify-content: space-between;
+  border: 1px solid #FF5722;
+  margin: 10px 0;
+  color: #FF5722
 }
 
-.nav-list li a {
-  color: rgba(240, 240, 240, 80%)
+.errorlist{
+  padding: 0;
 }
 
-.nav-list li a:hover { 
-  color: white;
+.site-form input[type="submit"]{
+  background: #00dba0;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 4px;
+  margin: 10px 0;
 }
