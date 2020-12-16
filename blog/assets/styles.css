@@ -38,3 +38,20 @@ a, a:hover, a:visited{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.nav-list {
+  list-style-type: none;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  max-width: 400px;
+  justify-content: space-between;
+}
+
+.nav-list li a {
+  color: rgba(240, 240, 240, 80%)
+}
+
+.nav-list li a:hover { 
+  color: white;
+}

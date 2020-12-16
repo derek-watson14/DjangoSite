@@ -10,6 +10,26 @@
     <body>
         <header class="wrapper">
             <h1 class="logo"><a href="{% url 'articles:list' %}">VIEW BLOG ARTICLES!</a></h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="{% url 'homepage' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'articles:list' %}">Articles</a></li>
+                    {% if user.is_authenticated == False %}
+                    <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    {% endif %}
+                    {% if user.is_authenticated == True %}
+                    <li><a href="{% url 'articles:create' %}">New Article</a></li>
+                    <li>
+                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
         </header>
         <div class="wrapper">
             {% block content %}
